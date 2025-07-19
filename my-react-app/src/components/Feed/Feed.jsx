@@ -23,7 +23,7 @@ const Feed = ({category}) => {
       setLoading(true);
       setError(null);
       
-      const videoList_url = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=50&regionCode=US&videoCategoryId=${category}&key=${API_KEY}`;
+      const videoList_url = `api key here`;
       
       const response = await fetch(videoList_url);
       

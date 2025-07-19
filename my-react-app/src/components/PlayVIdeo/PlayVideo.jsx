@@ -16,19 +16,19 @@ const PlayVideo = ({ videoId }) => {
     const [commentData, setCommentData] = useState(null);
 
     const fetchVideoData = async () => {
-        const videoDetails_url = `https://www.googleapis.com/youtube/v3/videos?part=snippet,contentDetails,statistics&id=${videoId}&key=${API_KEY}`;
+        const videoDetails_url = `api key here`;
         await fetch(videoDetails_url)
             .then(res => res.json())
             .then(data => setApiData(data.items[0]));
     };
 
     const fetchChannelData = async () => {
-        const channelDetails_url = `https://youtube.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics&id=${apiData.snippet.channelId}&key=${API_KEY}`;
+        const channelDetails_url = `api key here`;
         await fetch(channelDetails_url)
             .then(res => res.json())
             .then(data => setChannelData(data.items[0]));
 
-        const comment_url = `https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet%2Creplies&maxResults=50&videoId=${videoId}&key=${API_KEY}`;
+        const comment_url = `api key here`;
         await fetch(comment_url)
             .then(res => res.json())
             .then(data => setCommentData(data.items));
@@ -47,7 +47,7 @@ const PlayVideo = ({ videoId }) => {
     return (
         <div className='play-video'>
             <iframe
-                src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
+                src={`api key here`}
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerPolicy="strict-origin-when-cross-origin"
