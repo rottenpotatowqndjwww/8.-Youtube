@@ -1,0 +1,51 @@
+/* Main container styles */
+.container {
+  background: #0f0f0f;
+  min-height: calc(100vh - 56px); /* Full height minus navbar */
+  padding-left: 264px; /* 240px sidebar + 24px margin */
+  padding-right: 24px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  transition: padding-left 0.3s ease; /* Smooth transition when sidebar toggles */
+  margin-top: 56px; /* Account for fixed navbar */
+}
+
+/* Large container when sidebar is collapsed */
+.large-container {
+  padding-left: 96px !important; /* 72px collapsed sidebar + 24px margin */
+}
+
+/* Responsive design */
+@media (max-width: 1312px) {
+  .container {
+    padding-left: 96px; /* Auto-adjust for responsive sidebar */
+  }
+  
+  .large-container {
+    padding-left: 96px !important; /* Same padding since sidebar is already collapsed */
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-left: 16px; /* Remove sidebar padding on mobile */
+    padding-right: 16px;
+    padding-top: 16px;
+  }
+  
+  .large-container {
+    padding-left: 16px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 12px;
+  }
+  
+  .large-container {
+    padding-left: 12px !important;
+  }
+}

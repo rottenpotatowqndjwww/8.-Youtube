@@ -1,0 +1,98 @@
+/* Reset all default margins and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #0f0f0f;
+  font-family: 'Roboto', sans-serif;
+  color: #fff;
+}
+
+/* Main app container - remove all spacing */
+.app-container {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: #0f0f0f;
+}
+
+/* Routes container - ensure no spacing */
+.routes-container {
+  margin: 0;
+  padding: 0;
+  background-color: #0f0f0f;
+}
+
+/* Home page layout */
+.home-container {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  background-color: #0f0f0f;
+  min-height: calc(100vh - 56px); /* Account for navbar height */
+}
+
+/* Main content area (next to sidebar) */
+.main-content {
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  background-color: #0f0f0f;
+  padding-top: 0 !important; /* Force remove any top padding */
+  margin-top: 0 !important; /* Force remove any top margin */
+}
+
+/* Feed container styling */
+.feed-container {
+  margin: 0;
+  padding: 20px; /* Internal padding for content spacing */
+  background-color: #0f0f0f;
+  margin-top: 0 !important;
+  padding-top: 20px !important;
+}
+
+/* Ensure no gaps around video content */
+.video-container {
+  margin: 0;
+  padding: 0;
+  background-color: #0f0f0f;
+}
+
+/* Remove any default styling from react-router */
+.routes-wrapper {
+  margin: 0;
+  padding: 0;
+  background-color: #0f0f0f;
+}
+
+/* Additional safety resets for common elements */
+div {
+  margin: 0;
+  padding: 0;
+}
+
+/* Specific fixes for potential wrapper elements */
+[class*="container"],
+[class*="wrapper"],
+[class*="content"] {
+  margin-top: 0 !important;
+  padding-top: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .home-container {
+    flex-direction: column;
+  }
+  
+  .main-content {
+    padding: 16px;
+    padding-top: 16px !important;
+  }
+}

@@ -1,0 +1,296 @@
+/* Main sidebar container */
+.sidebar {
+  background: #0f0f0f;
+  width: 240px; /* Fixed width for expanded state */
+  height: calc(100vh - 56px); /* Account for navbar height */
+  position: sticky;
+  top: 56px; /* Position below navbar */
+  left: 0;
+  padding: 12px 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: all 0.3s ease;
+  z-index: 5;
+  border-right: 1px solid #303030;
+  margin: 0; /* Ensure no margins */
+  flex-shrink: 0; /* Prevent sidebar from shrinking in flex layout */
+}
+
+/* Custom scrollbar */
+.sidebar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: #606060;
+  border-radius: 4px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+  background: #757575;
+}
+
+/* Shortcut links section */
+.shortcut-links {
+  padding: 0 12px;
+  margin-bottom: 12px;
+}
+
+/* Individual side link styling */
+.side-link {
+  display: flex;
+  align-items: center;
+  padding: 10px 12px;
+  margin-bottom: 2px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #fff;
+  text-decoration: none;
+  position: relative;
+}
+
+.side-link:hover {
+  background-color: #272727;
+}
+
+.side-link.active {
+  background-color: #3d3d3d;
+  font-weight: 500;
+}
+
+/* Side link images */
+.sidebar .shortcut-links img {
+  width: 24px;
+  height: 24px;
+  margin-right: 24px;
+  flex-shrink: 0;
+  filter: invert(1);
+  opacity: 0.9;
+}
+
+.subscribed-list img {
+  width: 24px;
+  height: 24px;
+  margin-right: 24px;
+  flex-shrink: 0;
+}
+
+.side-link:hover .sidebar .shortcut-links img {
+  opacity: 1;
+}
+
+/* Side link text */
+.side-link p {
+  font-size: 14px;
+  font-weight: 400;
+  margin: 0;
+  white-space: nowrap;
+  opacity: 0.9;
+  transition: opacity 0.2s ease;
+}
+
+.side-link:hover p {
+  opacity: 1;
+}
+
+/* Horizontal divider */
+.sidebar hr {
+  border: 0;
+  height: 1px;
+  background-color: #3d3d3d;
+  margin: 12px 12px 12px 12px;
+  opacity: 0.3;
+}
+
+/* Subscribed list section */
+.subscribed-list {
+  padding: 0 12px;
+}
+
+.subscribed-list h3 {
+  font-size: 14px;
+  font-weight: 500;
+  margin: 16px 12px 8px 12px;
+  color: #aaa;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Subscription channel images (circular) */
+.subscribed-list img {
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.subscribed-list .side-link:hover img {
+  border-color: #fff;
+}
+
+/* SMALL SIDEBAR STYLES (when sidebar prop is false) */
+.small-sidebar {
+  width: 72px !important;
+  padding: 4px 0 !important;
+  overflow-y: hidden !important;
+}
+
+.small-sidebar .shortcut-links {
+  padding: 0 4px;
+}
+
+/* Hide all text in small sidebar */
+.small-sidebar p {
+  display: none !important;
+}
+
+/* Hide subscription heading in small sidebar */
+.small-sidebar h3 {
+  display: none !important;
+}
+
+/* Adjust side links for small sidebar */
+.small-sidebar .side-link {
+  flex-direction: column;
+  padding: 16px 4px 14px 4px !important;
+  margin-bottom: 4px;
+  text-align: center;
+  min-height: 50px;
+  justify-content: center;
+}
+
+/* Center icons in small sidebar */
+.small-sidebar .side-link img {
+  margin-right: 0 !important;
+  margin-bottom: 0;
+  width: 24px;
+  height: 24px;
+}
+
+/* Adjust hr in small sidebar */
+.small-sidebar hr {
+  width: 32px !important;
+  margin: 12px auto !important;
+}
+
+/* Keep subscription section visible in small sidebar with only icons */
+.small-sidebar .subscribed-list {
+  padding: 0 4px;
+  display: block !important;
+}
+
+.small-sidebar .subscribed-list .side-link {
+  flex-direction: column;
+  padding: 12px 4px !important;
+  margin-bottom: 4px;
+  text-align: center;
+  min-height: 44px;
+  justify-content: center;
+}
+
+.small-sidebar .subscribed-list img {
+  width: 28px !important;
+  height: 28px !important;
+  margin-right: 0 !important;
+  border-radius: 50%;
+}
+
+/* Responsive design */
+@media (max-width: 1312px) {
+  .sidebar {
+    width: 72px;
+    padding: 4px 0;
+    overflow-y: hidden;
+  }
+  
+  .sidebar .shortcut-links {
+    padding: 0 4px;
+  }
+  
+  .sidebar p {
+    display: none;
+  }
+  
+  .sidebar h3 {
+    display: none;
+  }
+  
+  .sidebar .side-link {
+    flex-direction: column;
+    padding: 16px 4px 14px 4px;
+    margin-bottom: 4px;
+    text-align: center;
+    min-height: 50px;
+    justify-content: center;
+  }
+  
+  .sidebar .side-link img {
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+  
+  .sidebar .subscribed-list {
+    padding: 0 4px;
+    display: block;
+  }
+  
+  .sidebar .subscribed-list .side-link {
+    padding: 12px 4px;
+    min-height: 44px;
+  }
+  
+  .sidebar .subscribed-list img {
+    width: 28px;
+    height: 28px;
+    margin-right: 0;
+  }
+  
+  .sidebar hr {
+    width: 32px;
+    margin: 12px auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+    position: fixed;
+    z-index: 1000;
+    width: 240px;
+    height: calc(100vh - 56px);
+    top: 56px;
+  }
+  
+  .sidebar.mobile-open {
+    transform: translateX(0);
+  }
+}
+
+/* Home link active state */
+.side-link.home-active {
+  background-color: #3d3d3d;
+  font-weight: 500;
+}
+
+.side-link.home-active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background-color: #ff0000;
+  border-radius: 0 2px 2px 0;
+}
+.side-link.active img{
+  padding-bottom: 2px;
+  border-bottom: 3px solid red;
+}
+.side-link.active p{
+  color: #04eced;
+}

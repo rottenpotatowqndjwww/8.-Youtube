@@ -1,0 +1,181 @@
+/* Main feed container */
+.feed {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-column-gap: 20px;
+  grid-row-gap: 40px;
+  margin-top: 20px;
+  padding: 0 4px; /* Small padding to prevent edge clipping */
+}
+
+/* Individual video cards */
+.card {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+}
+
+/* Thumbnail styling */
+.card img {
+  width: 100%;
+  border-radius: 12px;
+  aspect-ratio: 16/9; /* Maintain YouTube aspect ratio */
+  object-fit: cover;
+  transition: border-radius 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.card:hover img {
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* Video title */
+.card h2 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #f1f1f1;
+  margin: 12px 0 4px 0;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 2.8em; /* Limit to 2 lines */
+}
+
+.card:hover h2 {
+  color: #fff;
+}
+
+/* Channel name */
+.card h3 {
+  font-size: 14px;
+  font-weight: 400;
+  color: #aaa;
+  margin: 4px 0 2px 0;
+  transition: color 0.2s ease;
+}
+
+.card:hover h3 {
+  color: #fff;
+}
+
+/* Video metadata (views and time) */
+.card p {
+  font-size: 14px;
+  color: #aaa;
+  margin: 2px 0 0 0;
+  font-weight: 400;
+}
+
+/* Responsive grid adjustments */
+@media (max-width: 1400px) {
+  .feed {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-column-gap: 16px;
+    grid-row-gap: 36px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .feed {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-column-gap: 16px;
+    grid-row-gap: 32px;
+  }
+}
+
+@media (max-width: 968px) {
+  .feed {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-column-gap: 20px;
+    grid-row-gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .feed {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-column-gap: 16px;
+    grid-row-gap: 28px;
+    margin-top: 16px;
+  }
+  
+  .card h2 {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 640px) {
+  .feed {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-column-gap: 12px;
+    grid-row-gap: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .feed {
+    grid-template-columns: 1fr; /* Single column on mobile */
+    grid-row-gap: 24px;
+    margin-top: 12px;
+  }
+  
+  .card img {
+    border-radius: 8px;
+  }
+  
+  .card h2 {
+    font-size: 14px;
+    margin: 8px 0 4px 0;
+  }
+  
+  .card h3,
+  .card p {
+    font-size: 13px;
+  }
+}
+
+/* Optional: Add a subtle loading state placeholder */
+.card.loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.card.loading img {
+  background: linear-gradient(90deg, #1a1a1a 25%, #2a2a2a 50%, #1a1a1a 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Hover effect for better UX */
+.card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 12px;
+  background: transparent;
+  transition: background 0.2s ease;
+  pointer-events: none;
+}
+
+.card:hover::after {
+  background: rgba(255, 255, 255, 0.02);
+}

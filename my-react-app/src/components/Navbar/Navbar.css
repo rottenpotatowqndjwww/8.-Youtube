@@ -1,0 +1,276 @@
+/* Your existing CSS stays the same... */
+/* Reset default margins and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #0f0f0f; /* Match your dark theme */
+}
+
+.flex-div {
+  display: flex;
+  align-items: center;
+}
+
+nav {
+  padding: 10px 2%;
+  justify-content: space-between;
+  background: #0e0f0f;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  height: 56px;
+  margin: 0; /* Ensure no margin */
+}
+
+.nav-left {
+  gap: 20px;
+}
+
+.nav-left .menu-icon {
+  width: 18px;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.nav-left .menu-icon:hover {
+  opacity: 0.8;
+}
+
+.nav-left .logo {
+  width: 30px;
+  display: block; /* Fix: Remove inline spacing */
+}
+
+.nav-left span {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  margin-left: 0; /* Fix: Remove left margin */
+  letter-spacing: -0.5px;
+  line-height: 1; /* Fix: Ensure consistent line height */
+}
+
+.nav-left .sup {
+  color: #707171;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.nav-middle {
+  flex: 1;
+  justify-content: center;
+  max-width: 728px;
+  margin: 0 40px;
+  gap: 15px;
+}
+
+.nav-middle .search-box {
+  border: 1px solid #303030;
+  border-radius: 25px;
+  padding: 8px 12px;
+  background: #121212;
+  flex: 1;
+  max-width: 600px;
+  transition: border-color 0.2s ease;
+}
+
+.nav-middle .search-box:focus-within {
+  border-color: #1c62b9;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.3);
+}
+
+.nav-middle .search-box input {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #fff;
+  font-size: 16px;
+  padding: 4px 8px;
+}
+
+.nav-middle .search-box input::placeholder {
+  color: #888;
+}
+
+.nav-middle .search-box img {
+  width: 20px;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+
+.nav-middle .search-box img:hover {
+  opacity: 1;
+}
+
+.nav-middle .mic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #272727;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.nav-middle .mic:hover {
+  background-color: #3a3a3a;
+}
+
+.nav-middle .mic .mic-icon {
+  width: 20px;
+  height: 20px;
+  filter: invert(1);
+}
+
+.nav-right {
+  gap: 20px;
+}
+
+.nav-right img {
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.nav-right img:hover {
+  opacity: 0.8;
+}
+
+.nav-right .upload-icon {
+  width: 24px;
+  filter: invert(1);
+}
+
+.nav-right .notification-icon {
+  width: 24px;
+  filter: invert(1);
+}
+
+.nav-right .userIcon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.nav-right .userIcon:hover {
+  border-color: #fff;
+}
+
+/* Main content area - ensure no gaps */
+main {
+  margin: 0;
+  padding: 0;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* If you have a wrapper div around feed */
+.main-content, .content-wrapper, .wrapper {
+  margin: 0;
+  padding: 0;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* CUSTOM TOAST STYLES - Add these to match your dark theme */
+.Toastify__toast-container {
+  z-index: 9999 !important;
+}
+
+.Toastify__toast {
+  background-color: #272727 !important;
+  color: #fff !important;
+  border-radius: 8px !important;
+  font-family: inherit !important;
+  font-size: 14px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
+}
+
+.Toastify__toast--info {
+  background-color: #272727 !important;
+}
+
+.Toastify__toast--success {
+  background-color: #2d5a3d !important;
+}
+
+.Toastify__toast--warning {
+  background-color: #5a4a2d !important;
+}
+
+.Toastify__toast--error {
+  background-color: #5a2d2d !important;
+}
+
+.Toastify__progress-bar {
+  background: #ff0000 !important;
+}
+
+.Toastify__progress-bar--info {
+  background: #3498db !important;
+}
+
+.Toastify__progress-bar--success {
+  background: #07bc0c !important;
+}
+
+.Toastify__progress-bar--warning {
+  background: #f1c40f !important;
+}
+
+.Toastify__progress-bar--error {
+  background: #e74c3c !important;
+}
+
+.Toastify__close-button {
+  color: #fff !important;
+  opacity: 0.7 !important;
+}
+
+.Toastify__close-button:hover {
+  opacity: 1 !important;
+}
+
+@media (max-width: 768px) {
+  nav {
+    padding: 8px 16px;
+  }
+  
+  .nav-middle {
+    margin: 0 20px;
+  }
+  
+  .nav-middle .search-box input {
+    width: 250px;
+  }
+  
+  .nav-right {
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-middle .search-box {
+    display: none;
+  }
+  
+  .nav-middle .mic {
+    display: none;
+  }
+  
+  .nav-left span {
+    font-size: 18px;
+  }
+}
